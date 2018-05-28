@@ -9,11 +9,14 @@ class CFeet
 private:
 	int feet;
 	int inch;
+	double meter;
 public:
 	void setvalue(int fe, int in);
 	void display();
 	CFeet add(CFeet & objf);
 	CFeet operator+(CFeet & objf);
+	void huan();
+	void printf();
 };
 void CFeet::setvalue(int fe, int in)
 {
@@ -36,6 +39,14 @@ CFeet CFeet::operator+(CFeet & objf)
 	temp.setvalue(feet + objf.feet, inch + objf.inch);
 	return temp;
 }
+void CFeet::huan()
+{
+	meter = 0.3048*feet + 0.0254*inch;
+}
+void CFeet::printf()
+{
+	cout << "ÇÒµÈÓÚ" << meter << "Ã×" << endl;
+}
 int main()
 {
 	CFeet a, b, c;
@@ -43,6 +54,8 @@ int main()
 	b.setvalue(6, 9);
 	c = a + b;
 	c.display();
+	c.huan();
+	c.printf();
     return 0;
 }
 
