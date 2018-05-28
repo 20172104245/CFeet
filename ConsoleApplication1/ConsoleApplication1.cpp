@@ -50,8 +50,8 @@ void CFeet::printf()
 int main()
 {
 	CFeet a, b, c;
-	a.setvalue(10, 11);
-	b.setvalue(6, 9);
+	a.setvalue(1, 1);
+	b.setvalue(-2, 2);
 	c = a + b;
 	c.display();
 	c.huan();
